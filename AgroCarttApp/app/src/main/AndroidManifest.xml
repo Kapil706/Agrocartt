@@ -11,7 +11,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".startScreen"  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+         <!--BUG FIXED(6/07/2018):
+       BUG
+       Multiple MainActivities were launching when the user changes the device orientation
+       during the GIF display.
+       FIX
+       Changed the configuration of .startScreen to ensure that it does not restart on orientation change
+       I could have disabled screen orientation altogether but it just didn't felt right.-->
+        <activity android:name=".startScreen"  android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
