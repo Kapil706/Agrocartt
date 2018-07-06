@@ -17,6 +17,15 @@ Notes:-
 [Multithreading Core Java For Android Developers](https://medium.com/@sankalpchauhan.me/core-java-for-android-developers-multithreading-e7ec7d53924c) 
 4. The GIF I used can be replaced with appropriate GIF (Further Details are mentioned in the comments)
 
+      * BUG FIXED(6/07/2018):
+      
+       BUG
+       Multiple MainActivities were launching when the user changes the device orientation
+       during the GIF display.
+       FIX
+       Changed the configuration of .startScreen to ensure that it does not restart on orientation change
+       I could have disabled screen orientation altogether but it would create problem in TABLETS
+       
 [Video]
 
 
