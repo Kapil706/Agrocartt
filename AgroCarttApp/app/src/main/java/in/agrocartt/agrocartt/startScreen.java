@@ -1,9 +1,12 @@
 package in.agrocartt.agrocartt;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 import android.widget.ImageView;
 //Glide Library Import
 import com.bumptech.glide.Glide;
@@ -16,10 +19,14 @@ import com.bumptech.glide.Glide;
 public class startScreen extends AppCompatActivity {
     public static int TIME_OUT_ASSIGNED = 4000;     //Change the value of variable for varying the timeout
     private ImageView imageView;
+    private Boolean check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_screen);
+        //Full Screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //Setting ImageView
         imageView = findViewById(R.id.org_gif);
 
@@ -45,11 +52,28 @@ public class startScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(startScreen.this, MainActivity.class);
-                startActivity(i);
+                //Checks whether the user selected the language previously if not it will start LanguageSetting else MainActivity
+                if(getLanguageSet() == false) {
+                    Intent i = new Intent(startScreen.this, LanguageSetting.class);
+                    startActivity(i);
+                }
+                else{
+                    Intent i = new Intent(startScreen.this, MainActivity.class);
+                    startActivity(i);
+                }
                 finish();
             }
         }, TIME_OUT_ASSIGNED);
 
+    }
+
+    /**
+     *
+     * @returns the language that was selected by user previously from the SharedPrefrences
+     */
+    public boolean getLanguageSet(){
+        SharedPreferences sharePref = getSharedPreferences("lang_info", Context.MODE_PRIVATE);
+        check = sharePref.getBoolean("languageSet", false);
+        return check;
     }
 }

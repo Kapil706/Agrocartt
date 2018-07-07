@@ -25,6 +25,17 @@ Notes:-
        FIX
        Changed the configuration of .startScreen to ensure that it does not restart on orientation change
        I could have disabled screen orientation altogether but it would create problem in TABLETS
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### LOG 1. Added Language Selection Screen and Improved Look and Feel 1:00 AM (08/07/18) (Contributing Member:- Sankalp Chauhan)
+Short Description:- (Will add detailed description later)
+
+* Now user can select the language of app the language will be stored in shared prefrences, so the app will know which language did the user choose the last time 
+* The app will not prompt the user for language each time but only one time after installation
+* matched theme with the initiative's default colors 
+* added a dialog box on exit
+* Minor Bug Fixes and Ripple Effect dependency for pre-lollipop devices (API less than 21) 
+
        
 [Video]
 
