@@ -27,7 +27,7 @@ Notes:-
        I could have disabled screen orientation altogether but it would create problem in TABLETS
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### LOG 1. Added Language Selection Screen and Improved Look and Feel 1:00 AM (08/07/18) (Contributing Member:- Sankalp Chauhan)
+### LOG 2. Added Language Selection Screen and Improved Look and Feel 1:00 AM (08/07/18) (Contributing Member:- Sankalp Chauhan)
 Short Description:- (Will add detailed description later)
 
 * Now user can select the language of app the language will be stored in shared prefrences, so the app will know which language did the user choose the last time 
