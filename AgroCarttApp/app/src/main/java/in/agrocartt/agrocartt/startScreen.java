@@ -58,7 +58,7 @@ public class startScreen extends AppCompatActivity {
                     startActivity(i);
                 }
                 else{
-                    Intent i = new Intent(startScreen.this, MainActivity.class);
+                    Intent i = new Intent(startScreen.this, LoginActivity.class);
                     startActivity(i);
                 }
                 finish();
