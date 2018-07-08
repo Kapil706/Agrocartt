@@ -1,6 +1,6 @@
 # Android App CHANGELOGS
 
-### LOG 1. Added Start Screen (06/07/18) (Contributing Member:- Sankalp Chauhan)
+### LOG 1. Added Start Screen                                                                                          (06/07/18) (Contributing Member:- Sankalp Chauhan)
 Notes:-
 1. 
  * Min SDK Targeted:- 19 {SDK 19 == Android KITKAT}
@@ -27,14 +27,17 @@ Notes:-
        I could have disabled screen orientation altogether but it would create problem in TABLETS
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### LOG 2. Added Language Selection Screen and Improved Look and Feel 1:00 AM (08/07/18) (Contributing Member:- Sankalp Chauhan)
-Short Description:- (Will add detailed description later)
+### LOG 2. Added Language Selection Screen and Improved Look and Feel                                                       1:00 AM (08/07/18) (Contributing Member:- Sankalp Chauhan)
+Change Description:- 
 
-* Now user can select the language of app the language will be stored in shared prefrences, so the app will know which language did the user choose the last time 
-* The app will not prompt the user for language each time but only one time after installation
-* matched theme with the initiative's default colors 
-* added a dialog box on exit
+1. Major Change (Added Language Selection Screen)
+Added a languge screen when the user clicks on the language the language will get selected and stored in an xml format to a file "lang_info" in shared_prefs folder this information will be recieved at runtime and will be used to render the language of the whole app. This also sets a language flag to true in lang_info.xml file which is fetched at runtime and accordingly user will not see the language selection screen everytime the app opens, rather it will be seen only one time after installation.
+
+2. Minor Changes (Improved Look and Feel)
+* Matched Colors with the initiative's default colors.
+* Added a dialog box on exit (onBackButtonPressed()) so that the user do not accidently close the app
 * Minor Bug Fixes and Ripple Effect dependency for pre-lollipop devices (API less than 21) 
+(Further Details are mentioned in the code comments)
 
        
 [Video]
