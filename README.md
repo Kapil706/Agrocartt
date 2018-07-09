@@ -1,9 +1,11 @@
 # Agrocartt
 It is regarding supply chain management for the post harvest losses of crop products in India. We are creating a decentralized blockchain powered hyperledger project for solving this issue. We are open to suggestions and ideas that can help us so that we can grow as emerging tech company and we are creating a new digital era for farmers. This repository is under Paytm build for India Initiative. We want to create decentralized application for Farmers and customers. It is a Pan India Project. Developers who have experience in Blockchain,Solidity Programming and Mobile devlelopment are most welcome. Last but not least, those who have knowledge about agriculture and business are also inivited to join.
+
 [Contributing Guidlines](CONTRIBUTING.md)
 
-Logo By Anurag One of the contributor
 ![Logo By Anurag One of the contributor](logo/agro.png)
+
+Logo By Anurag One of the contributor
 
 # For Contributing to Android Project
 
