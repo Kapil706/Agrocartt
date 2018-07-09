@@ -39,6 +39,17 @@ Added a languge screen when the user clicks on the language the language will ge
 * Minor Bug Fixes and Ripple Effect dependency for pre-lollipop devices (API less than 21) 
 (Further Details are mentioned in the code comments)
 
+### LOG 3. Added Sign In Screen (Using Firebase), Drawer For Profile Screen                                                   12:45 AM (09/07/18) (Contributing Member:- Sankalp Chauhan)
+Change Description:-
+
+1. **Added Sign In Screen** User can now login via Google Sign In, this was implemented using firebase [Firebase Authentication Guide](https://firebase.google.com/docs/auth/)
+2. **Added a slide Drawer** Right now it contains placeholders, The placeholders will be replaced by user info.
+
+* Known Issues:- (Please update the section after solving the Issue with explainaition on how issue is resolved)
+
+        Known Issues:-
+        Right Now Sign in is only possible through Google Sign In however Facebook sign In and Phone OTP buttons are present but they are non-functional.
+
        
 [Video]
 
