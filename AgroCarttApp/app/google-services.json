@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "118054072491",
+    "firebase_url": "https://agrocartt.firebaseio.com",
+    "project_id": "agrocartt",
+    "storage_bucket": "agrocartt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118054072491:android:4655205f38c87687",
+        "android_client_info": {
+          "package_name": "in.agrocartt.agrocartt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118054072491-o2qv0kh4qirc75fr6v7gk28njlaqvn0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.agrocartt.agrocartt",
+            "certificate_hash": "72c378806c4339143a85d2dc0e47b32c9df766cb"
+          }
+        },
+        {
+          "client_id": "118054072491-0j935gib8us79l0ctjlo13l7h53hfig1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-2jGsY1IPjSH9qb06R1wODY-5PpEu4AE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118054072491-0j935gib8us79l0ctjlo13l7h53hfig1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

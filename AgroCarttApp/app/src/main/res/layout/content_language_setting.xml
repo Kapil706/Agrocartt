@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="in.agrocartt.agrocartt.LanguageSetting"
+    tools:showIn="@layout/activity_language_setting">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/language_list">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/eng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/english"
+            style="@style/CategoryStyle"
+            android:textColor="#000"
+            android:background="?android:attr/selectableItemBackground"
+             />
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/hindi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hindi"
+            style="@style/CategoryStyle"
+            android:textColor="#000"
+            android:background="?android:attr/selectableItemBackground"
+            />
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/punjabi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punjabi"
+            style="@style/CategoryStyle"
+            android:textColor="#000"
+            android:background="?android:attr/selectableItemBackground"
+            />
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
