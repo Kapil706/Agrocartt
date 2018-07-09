@@ -1,13 +1,13 @@
-#Agrocartt
-To all the contributors please read this before contribution 
+# Agrocartt Contribution Rules
+## To all the contributors please read this before contribution 
 I am writing the rules for contribution here ..
 Please follow these rules and regulations.
-1. Always start NEW Pull Request from this branch.
+1. Always start NEW Pull Request from contribute branch.
 2. Do not commit directly on master branch.
 3. Use small commits do not push large code base at once either it will not be merged with master branch.
 .
 
-A golden Rule to Contribute 
+### A golden Rule to Contribute 
 
 1. Fork this repository into your remote github account.
 2. Clone that repository into your local machine i.e computer.
