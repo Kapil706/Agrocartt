@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.agrocartt.agrocartt.LoginActivity"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        >
+
+        <Button
+            android:id="@+id/facebook_signIn"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="Sign in with Facebook"
+            android:textColor="@color/icons"
+            android:backgroundTint="#3b5998"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/facebook_branding"
+            />
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/facebook_signIn"
+            android:layout_centerInParent="true"/>
+        <Button
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="Sign in with Phone Number and OTP"
+            android:backgroundTint="@color/icons"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/ic_callotp"
+            android:layout_below="@id/facebook_signIn"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
