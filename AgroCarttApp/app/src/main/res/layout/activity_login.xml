@@ -13,6 +13,9 @@
         android:background="@color/colorPrimary"
         >
 
+<<<<<<< HEAD
+
+=======
         <Button
             android:id="@+id/facebook_signIn"
             android:layout_width="230dp"
@@ -23,11 +26,15 @@
             android:layout_centerInParent="true"
             android:drawableLeft="@drawable/facebook_branding"
             />
+>>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+=======
             android:layout_above="@id/facebook_signIn"
+>>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
             android:layout_centerInParent="true"/>
         <Button
             android:layout_width="230dp"
@@ -36,7 +43,11 @@
             android:backgroundTint="@color/icons"
             android:layout_centerInParent="true"
             android:drawableLeft="@drawable/ic_callotp"
+<<<<<<< HEAD
+            android:layout_below="@id/sign_in_button"
+=======
             android:layout_below="@id/facebook_signIn"
+>>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
             />
 
     </RelativeLayout>
