@@ -3,12 +3,9 @@
     package="in.agrocartt.agrocartt">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-=======
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />

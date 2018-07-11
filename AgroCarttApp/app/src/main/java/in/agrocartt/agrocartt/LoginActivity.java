@@ -5,22 +5,16 @@ package in.agrocartt.agrocartt;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-=======
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.ImageView;
-=======
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -39,15 +33,12 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoginActivity extends AppCompatActivity {
     //a constant for detecting the login intent result
     private static final int RC_SIGN_IN = 234;
-<<<<<<< HEAD
     //private ImageView user_profile;
 
     //for getting user's data from firebaseAuth
     String user_photoUrl = "";
     String user_displayName = "";
     String user_email = "";
-=======
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
 
     //Tag for the logs
     private static final String TAG = "Login_Activity";
@@ -61,24 +52,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
        setContentView(R.layout.activity_login);
 
        //Network Connection is checked here:
         if(!isConnected(LoginActivity.this)) buildDialog(LoginActivity.this).show();
 
-=======
-        setContentView(R.layout.activity_login);
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
 
         //Intialized the FirebaseAuth object
         mAuth = FirebaseAuth.getInstance();
 
-<<<<<<< HEAD
        // user_profile = findViewById(R.id.firebase_userPhoto); (DEPRECEATED)
 
-=======
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
         //Added a GoogleSignInOptions object
         //And we need to build it as below
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -98,7 +82,6 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
-<<<<<<< HEAD
 
     }
 
@@ -181,9 +164,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-=======
-    }
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
 
     @Override
     protected void onStart() {
@@ -220,15 +200,12 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-<<<<<<< HEAD
 
 
 
 
     //firebaseAuthentication start----------------------------------------------------------------------------------------------------------------------
 
-=======
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
 
@@ -242,21 +219,12 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithCredential:success");
-<<<<<<< HEAD
                             firebase_fetch_details();
                             Intent i = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(i);
                             Log.i("FIREBASE", "Sign In Success");
                             LoginActivity.this.finish();
                             Toast.makeText(LoginActivity.this, user_displayName + " Signed In", Toast.LENGTH_SHORT).show();
-=======
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            String mName = user.getDisplayName();
-                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(i);
-                            LoginActivity.this.finish();
-                            Toast.makeText(LoginActivity.this, mName + " Signed In", Toast.LENGTH_SHORT).show();
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
                         } else {
                             // If sign in fails, a message is displayed to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -279,7 +247,6 @@ public class LoginActivity extends AppCompatActivity {
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
-<<<<<<< HEAD
     //firebaseAuthentication start methods over ----------------------------------------------------------------------------------------------------------------------
 
 
@@ -287,8 +254,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-=======
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
     //A simple back dialog as is used in MainActivity
     @Override
     public void onBackPressed() {
@@ -309,11 +274,8 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
 }
 
 
