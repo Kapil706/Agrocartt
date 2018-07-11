@@ -2,25 +2,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="192dp"
+<<<<<<< HEAD
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+=======
+>>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
     android:background="?attr/colorPrimaryDark"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:orientation="vertical"
     android:gravity="bottom">
+<<<<<<< HEAD
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/firebase_userPhoto"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drawer_profile_header"
+            android:padding="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:id="@+id/firebase_userName"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+=======
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:id="@+id/firebase_userPhoto"/>
+>>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+=======
         android:text="@string/drawer_profile_header"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:id="@+id/firebase_userName"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+>>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
         android:text="Email"
         android:id="@+id/firebase_userEmail"/>
 

@@ -5,6 +5,7 @@ package in.agrocartt.agrocartt;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -31,6 +33,12 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoginActivity extends AppCompatActivity {
     //a constant for detecting the login intent result
     private static final int RC_SIGN_IN = 234;
+    //private ImageView user_profile;
+
+    //for getting user's data from firebaseAuth
+    String user_photoUrl = "";
+    String user_displayName = "";
+    String user_email = "";
 
     //Tag for the logs
     private static final String TAG = "Login_Activity";
@@ -46,11 +54,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_login);
 
+       //Network Connection is checked here:
         if(!isConnected(LoginActivity.this)) buildDialog(LoginActivity.this).show();
 
 
         //Intialized the FirebaseAuth object
         mAuth = FirebaseAuth.getInstance();
+
+       // user_profile = findViewById(R.id.firebase_userPhoto); (DEPRECEATED)
 
         //Added a GoogleSignInOptions object
         //And we need to build it as below
@@ -71,13 +82,54 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
     }
 
+
+
+
+    //Getting user details from Firebase and storing it to shared prefrences
+    //--------------------------------------------------------------------------------------------------------------------
+
+    public void firebase_fetch_details(){
+       FirebaseUser user = mAuth.getCurrentUser();
+       if(user !=null){
+           user_photoUrl = user.getPhotoUrl().toString();
+           user_displayName = user.getDisplayName();
+           user_email = user.getEmail();
+
+           Log.i("Firebase details", "Details are " + "URL: " + user_photoUrl + "Name: " + user_displayName + "Email: "+ user_email);
+       }
+       dataToSharedPrefrences(user_photoUrl,user_displayName,user_email);
+    }
+
+    public void dataToSharedPrefrences(String fireurl, String firedisplayName, String fireemail){
+        SharedPreferences sharePref = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        SharedPreferences.Editor shareEdit = sharePref.edit();
+        shareEdit.putString("firebase_userPhotourl", fireurl);
+        shareEdit.putString("firebase_userDisplayName", firedisplayName);
+        shareEdit.putString("firebase_userEmail", fireemail);
+        shareEdit.commit();
+        Log.i("FIREBASE DATA", "Data stored in Shared Prefrences");
+    }
+    //Getting user details from Firebase and storing it to shared prefrences over--------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+    /**
+     * Checks if the user is connected to the internet
+     * @param context
+     * @return
+     */
+    //CHECK NETWORK STATE----------------------------------------------------------------------------------------------------------------------
     public boolean isConnected(Context context) {
 
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netinfo = cm.getActiveNetworkInfo();
-
+        Log.i("NetworkState", "isConnected checking network state.......");
         if (netinfo != null && netinfo.isConnectedOrConnecting()) {
             android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
             android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -89,22 +141,29 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public AlertDialog.Builder buildDialog(Context c) {
-
+        Log.i("NetworkState", "Network Failed......... Building Dialog");
         AlertDialog.Builder builder = new AlertDialog.Builder(c);
         builder.setTitle("No Internet Connection");
-        builder.setMessage("You need to have Mobile Data or wifi to access this. Press ok to Exit");
+        builder.setMessage("You need to have Mobile Data or WIFI to access AgroCartt. Press Enable to access network settings");
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
 
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Enable", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-                finish();
+                Intent in = new Intent(android.provider.Settings.ACTION_DATA_ROAMING_SETTINGS);
+                startActivity(in);
+               //finish();
             }
         });
 
         return builder;
     }
+    //CHECK NETWORK STATE METHODS OVER----------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
     @Override
     protected void onStart() {
@@ -141,6 +200,12 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
+
+
+
+    //firebaseAuthentication start----------------------------------------------------------------------------------------------------------------------
+
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
 
@@ -154,12 +219,12 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            String mName = user.getDisplayName();
+                            firebase_fetch_details();
                             Intent i = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(i);
+                            Log.i("FIREBASE", "Sign In Success");
                             LoginActivity.this.finish();
-                            Toast.makeText(LoginActivity.this, mName + " Signed In", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, user_displayName + " Signed In", Toast.LENGTH_SHORT).show();
                         } else {
                             // If sign in fails, a message is displayed to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -182,6 +247,13 @@ public class LoginActivity extends AppCompatActivity {
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
+    //firebaseAuthentication start methods over ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
     //A simple back dialog as is used in MainActivity
     @Override
     public void onBackPressed() {
@@ -202,6 +274,8 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
+
+
 }
 
 

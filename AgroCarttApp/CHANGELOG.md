@@ -38,6 +38,7 @@ Added a languge screen when the user clicks on the language the language will ge
 * Added a dialog box on exit (onBackButtonPressed()) so that the user do not accidently close the app
 * Minor Bug Fixes and Ripple Effect dependency for pre-lollipop devices (API less than 21) 
 (Further Details are mentioned in the code comments)
+
 ---------------------------------------------------------------------------------------------------------------------------------
 
 ### LOG 3. Added Sign In Screen (Using Firebase), Drawer For Profile Screen                                                   12:45 AM (09/07/18) (Contributing Member:- Sankalp Chauhan)
@@ -52,9 +53,20 @@ Change Description:-
         Right Now Sign in is only possible through Google Sign In however Facebook sign In and Phone OTP buttons are present but they are non-functional.
 
 
+----------------------------------------------------------------------------------------------------------------------------------
+
+
 ### LOG 4. Added No Internet Connection Dialog                                                   11:51 PM (10/07/18) (Contributing Member:- Nikhil Dhiman)
 Change Description:-
 <Same as title>		
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+### LOG 5. Added Methods For Fetching and Storing User Details from Firebase and Display it on Profile Screen                                          03:30 PM (11/07/18) (Contributing Member:- Sankalp Chauhan)
+Change Description:-
+Will Update Later
+
 		
        
 [Video]
