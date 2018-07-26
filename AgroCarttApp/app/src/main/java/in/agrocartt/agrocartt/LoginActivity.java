@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -49,6 +50,8 @@ public class LoginActivity extends AppCompatActivity {
     //And also a Firebase Auth object
     FirebaseAuth mAuth;
 
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,13 +85,18 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
+        progressBar = findViewById(R.id.login_progress);
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(!isConnected(LoginActivity.this)) buildDialog(LoginActivity.this).show();
+    }
 
 
-
-    //Getting user details from Firebase and storing it to shared prefrences
+//Getting user details from Firebase and storing it to shared prefrences
     //--------------------------------------------------------------------------------------------------------------------
 
     public void firebase_fetch_details(){
@@ -207,6 +215,8 @@ public class LoginActivity extends AppCompatActivity {
     //firebaseAuthentication start----------------------------------------------------------------------------------------------------------------------
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+
+        progressBar.setVisibility(View.VISIBLE);
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
 
         //getting the auth credential
@@ -217,6 +227,7 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithCredential:success");
                             firebase_fetch_details();
@@ -274,6 +285,11 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
+
+
+
+
+
 
 
 }

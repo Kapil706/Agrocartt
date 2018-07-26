@@ -67,9 +67,15 @@ Change Description:-
 Change Description:-
 Will Update Later
 
+-------------------------------------------------------------------------------------------------------------------------------------
+
+### LOG 6. Added Progress Bar and UI improvements                                                                                                  09:15 PM (26/07/18) (Contributing Member:- Sankalp Chauhan)
+Change Description:-
+Will Update Later
 		
        
 [Video]
+
 
 
 

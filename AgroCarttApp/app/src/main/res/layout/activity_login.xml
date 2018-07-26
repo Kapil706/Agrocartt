@@ -13,42 +13,57 @@
         android:background="@color/colorPrimary"
         >
 
-<<<<<<< HEAD
+        <TextView
+            android:layout_height="2dp"
+            android:layout_width="match_parent"
+            android:layout_gravity="fill_vertical"
+            android:background="#000"
 
-=======
-        <Button
-            android:id="@+id/facebook_signIn"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:text="Sign in with Facebook"
-            android:textColor="@color/icons"
-            android:backgroundTint="#3b5998"
-            android:layout_centerInParent="true"
-            android:drawableLeft="@drawable/facebook_branding"
-            />
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
+            android:layout_marginTop="350dp"/>
+
+
+
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-=======
-            android:layout_above="@id/facebook_signIn"
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
-            android:layout_centerInParent="true"/>
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="104dp" />
+
         <Button
+            android:id="@+id/sendCodeButton"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:text="Sign in with Phone Number and OTP"
+            android:layout_below="@+id/phoneNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
             android:backgroundTint="@color/icons"
-            android:layout_centerInParent="true"
             android:drawableLeft="@drawable/ic_callotp"
-<<<<<<< HEAD
-            android:layout_below="@id/sign_in_button"
-=======
-            android:layout_below="@id/facebook_signIn"
->>>>>>> a06ef9cc60137b00c27c27dcb732cf34f9228a9b
+            android:text="@string/sign_in_with_phone_number_and_otp"
             />
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:hint="Enter Phone Number"
+            android:inputType="phone"
+            android:textAlignment="center" />
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/login_progress"/>
+
+
+
 
     </RelativeLayout>
 
