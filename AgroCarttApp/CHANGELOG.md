@@ -58,27 +58,33 @@ Change Description:-
 
 ### LOG 4. Added No Internet Connection Dialog                                                   11:51 PM (10/07/18) (Contributing Member:- Nikhil Dhiman)
 Change Description:-
-<Same as title>		
+_Same As Title_		
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
 ### LOG 5. Added Methods For Fetching and Storing User Details from Firebase and Display it on Profile Screen                                          03:30 PM (11/07/18) (Contributing Member:- Sankalp Chauhan)
 Change Description:-
-Will Update Later
+The user's data is stored in SharedPreferences on Login Screen and then populated on next activity i.e. Main Activity.
+Now when the user opens the app second time the user will not have to login again and the details will already be fetched from the shared prefrences.
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
+
+* SORRY NOTE
+
+		Sorry for inconvinience:-
+		One of the user's pointed this out, the app was non functional from 18th July to 26 July'18 this was due to improper resolving of merge conflict by me (i.e. Sankalp Chauhan) which left unusual charachters at the end of each xml file however this has been resolved as of today i.e. 26 July '18. To make sure this does not happen in future I have downloaded the GUI application to automatically handle merge conflicts, earlier this was done manually.
+
+
+------------------------------------------------------------------------------------------------------------------------------
 ### LOG 6. Added Progress Bar and UI improvements                                                                                                  09:15 PM (26/07/18) (Contributing Member:- Sankalp Chauhan)
 Change Description:-
-Will Update Later
+* Progress Bar added on login screen and added Phone OTP button.
+* Internet Connection is now checked on AppResume also, earlier this was missing
+
+		 Known Issues:-
+		 Right Now Sign in is only possible through Google Sign In however Phone OTP buttons are present but they are non-functional.
 		
        
 [Video]
-
-
-
-
-
-
-
