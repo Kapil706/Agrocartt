@@ -1,7 +1,10 @@
 package in.agrocartt.agrocartt;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,7 +14,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,9 +36,14 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    ImageView imageView;
+    ImageView profileImage;
     TextView textName, textEmail;
     FirebaseAuth mAuth;
+
+    //Getting Firebase data from shared Prefrences:-
+    String firebase_UserPhotourl;
+    String firebase_userDisplayName;
+    String firebase_userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +51,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
 
-        imageView = findViewById(R.id.firebase_userPhoto);
-        textName = findViewById(R.id.firebase_userName);
-        textEmail = findViewById(R.id.firebase_userEmail);
+        //-------------------------NAVIGATION HEADER---------------------------------------
+        //Getting the views of navigaion header explicitly as mentioned in documentation
+        View header = ((NavigationView)findViewById(R.id.nav_view)).getHeaderView(0);
+        profileImage = header.findViewById(R.id.firebase_userPhoto);
+        textName = header.findViewById(R.id.firebase_userName);
+        textEmail = header.findViewById(R.id.firebase_userEmail);
+        //FETCHING USER DATA FROM SHARED PREFRENCES (I guess there is no need to check whether the user is present or not because that check has been performed on previous page)
+
+        getFirebaseUserFromSharedPrefrences();
+        if(firebase_userDisplayName.length()>0 && firebase_userEmail.length()>0)
+        {
+            if (getFirebaseUserFromSharedPrefrences() == true) {
+                //Setting Data of User:-
+                textName.setText(firebase_userDisplayName);
+                textEmail.setText(firebase_userEmail);
+                //check condition before url is placed
+                if (firebase_UserPhotourl.length()>0) {
+                    Glide.with(this).load(firebase_UserPhotourl).into(profileImage);
+                } else {
+                    Glide.with(this).load(R.mipmap.defaultuserpic).into(profileImage);
+                }
+            }
+        }
+        //----------------------------HEADER SECTION END-----------------------------------
+
+
+
+
+        //----------------------------DRAWER SECTION---------------------------------------
 
         //Sets toolbar burger for Drawer
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -72,11 +108,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        //Will be activated when firebase gets activated
-        //getuserdata(textName, textEmail, imageView);
+        //----------------------------DRAWER SECTION END---------------------------------------
+
 
 
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -93,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
      * A simple dialog is shown on back button pressed so that the user does not accidently
      * exits the app
      */
-
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -125,20 +161,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * CODE GIVING NULLPOINTEREXCEPTION
-     *
-    public void getuserdata(TextView mName, TextView mEmail, ImageView photo){
-        FirebaseUser user = mAuth.getCurrentUser();
 
-        Uri getImage = FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl();
+    //Gets the user data from the shared prefrences this will be used to populate the drawer
+    public boolean getFirebaseUserFromSharedPrefrences(){
+        SharedPreferences sharePref = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        firebase_UserPhotourl = sharePref.getString("firebase_userPhotourl","Check Internet Connection");
+        firebase_userDisplayName = sharePref.getString("firebase_userDisplayName","Check Internet Connection");
+        firebase_userEmail = sharePref.getString("firebase_userEmail","Check Internet Connection");
 
+        Log.i("FIREBASEfetch", "Data is"+ firebase_UserPhotourl + firebase_userDisplayName + firebase_userEmail );
 
-
-        mName.setText(user.getDisplayName());
-        mEmail.setText(user.getEmail());
+        return true;
     }
-     **/
+
 
 }
 
