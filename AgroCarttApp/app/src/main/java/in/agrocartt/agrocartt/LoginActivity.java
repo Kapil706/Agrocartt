@@ -13,6 +13,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.LogPrinter;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -203,7 +204,9 @@ public class LoginActivity extends AppCompatActivity {
                 //authenticating with firebase
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
+                Log.v("SHA1 Failiure", e.getMessage());
                 Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "API Call FAIL", Toast.LENGTH_SHORT).show();
             }
         }
     }
