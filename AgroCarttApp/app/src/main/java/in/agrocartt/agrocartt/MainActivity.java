@@ -67,11 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 textName.setText(firebase_userDisplayName);
                 textEmail.setText(firebase_userEmail);
                 //check condition before url is placed
-                if (firebase_UserPhotourl.length()>0) {
+
                     Glide.with(this).load(firebase_UserPhotourl).into(profileImage);
-                } else {
-                    Glide.with(this).load(R.mipmap.defaultuserpic).into(profileImage);
-                }
+
             }
         }
         //----------------------------HEADER SECTION END-----------------------------------
