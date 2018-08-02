@@ -18,3 +18,5 @@ Logo By Anurag One of the contributor
 **Note(To the developers working on Android Project)**:- _It is requested that all the changes made should be logged in the [CHANGELOG.md](AgroCarttApp/CHANGELOG.md), this helps fellow developers to know the state of the project. If possible provide comments in the code especially when importing an external library or defining a method that the developer thinks is difficult to understand. 
 Regards, **The AgroCartt Team**_
 
+* For initiating a bug report please read [Bug Report Template](https://github.com/PaytmBuildForIndia/Agrocartt/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)
+* For initiating a Feature Request Please read [Feature Request Template](https://github.com/PaytmBuildForIndia/Agrocartt/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)
