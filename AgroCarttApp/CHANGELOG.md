@@ -92,9 +92,14 @@ Change Description:-
 * The solution was provided by [@Kapil Chaudhary](https://github.com/Kapil706) it was as follows:-
 "[02/08, 18:34] ‪+91 95691 76495‬: If so, easiest solution, create a new debug keystore and put it into the project folder so that it goes into the git. Now any other user who downloads the project files also get the keystore. No more issues.
 [02/08, 18:34] ‪+91 95691 76495‬: To generate a new keystore, https://coderwall.com/p/r09hoq/android-generate-release-debug-keystores"
+---------------------------------------------------------------------------------------------------------------------------------
 
+### LOG 8. Added Phone OTP Verification using Firebase                                                                                                   07:00 PM (05/07/18) (Contributing Member:- Sankalp Chauhan)
+Change Description:-
+Added Firebase Phone/OTP verification using the [Documentation Here](https://firebase.google.com/docs/auth/android/phone-auth)
 
-		
+---------------------------------------------------------------------------------------------------------------------------------
+
        
 [Video]
 
