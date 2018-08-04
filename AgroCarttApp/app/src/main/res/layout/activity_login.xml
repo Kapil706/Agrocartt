@@ -32,7 +32,7 @@
             android:layout_marginBottom="104dp" />
 
         <Button
-            android:id="@+id/sendCodeButton"
+            android:id="@+id/phoneVerify"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/phoneNumber"
@@ -41,19 +41,8 @@
             android:backgroundTint="@color/icons"
             android:drawableLeft="@drawable/ic_callotp"
             android:text="@string/sign_in_with_phone_number_and_otp"
+            android:onClick="toPhoneVerifyScreen"
             />
-
-        <EditText
-            android:id="@+id/phoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="50dp"
-            android:ems="10"
-            android:hint="Enter Phone Number"
-            android:inputType="phone"
-            android:textAlignment="center" />
 
         <ProgressBar
             android:layout_width="60dp"
