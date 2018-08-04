@@ -96,7 +96,6 @@ Change Description:-
 
 ### LOG 8. Added Phone OTP Verification using Firebase                                                                                                   07:00 PM (05/07/18) (Contributing Member:- Sankalp Chauhan)
 Change Description:-
-Will add later
 Added Firebase Authentication using the [Documentation Here](https://firebase.google.com/docs/auth/android/phone-auth)
 
 ---------------------------------------------------------------------------------------------------------------------------------
