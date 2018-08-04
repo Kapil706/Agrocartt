@@ -85,6 +85,15 @@ Change Description:-
 
 		 Known Issues:-
 		 Right Now Sign in is only possible through Google Sign In however Phone OTP buttons are present but they are non-functional.
+---------------------------------------------------------------------------------------------------------------------------------		 
+### LOG 7. Solved API Authentication Fail Issue                                                                                                   08:00 PM (02/07/18) (Contributing Member:- Sankalp Chauhan & Kapil Chaudhary)
+Change Description:-
+* The issue was that when building app from android studio it was using SHA1 fingerprint of my Android Studio, this prevented any other Android Studio to make a call to the Firebase Authentication if the build was performed on their end.
+* The solution was provided by [@Kapil Chaudhary](https://github.com/Kapil706) it was as follows:-
+"[02/08, 18:34] ‪+91 95691 76495‬: If so, easiest solution, create a new debug keystore and put it into the project folder so that it goes into the git. Now any other user who downloads the project files also get the keystore. No more issues.
+[02/08, 18:34] ‪+91 95691 76495‬: To generate a new keystore, https://coderwall.com/p/r09hoq/android-generate-release-debug-keystores"
+
+
 		
        
 [Video]
