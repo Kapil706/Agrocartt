@@ -25,3 +25,6 @@ Current State of the app:-
  <p align="center">
     <img src="assets/sample.gif" alt="app"/> <br>
     </p>
+
+* For initiating a bug report please read [Bug Report Template](https://github.com/PaytmBuildForIndia/Agrocartt/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)
+* For initiating a Feature Request Please read [Feature Request Template](https://github.com/PaytmBuildForIndia/Agrocartt/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)
