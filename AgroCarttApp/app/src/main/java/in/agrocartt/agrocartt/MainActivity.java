@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,8 +20,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -105,6 +109,12 @@ public class MainActivity extends AppCompatActivity {
                         mDrawerLayout.closeDrawers();
 
                         // Add code here to update the UI based on the item selected
+                        switch(menuItem.getItemId()){
+                            case R.id.signOut:
+                                Toast.makeText(MainActivity.this, "Thankyou" + textName, Toast.LENGTH_SHORT).show();
+                                signOut();
+                                return true;
+                        }
                         // For example, swap UI fragments here
 
                         return true;
@@ -124,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
+                //Don't add drawer items here it's in the drawer section.
         }
         return super.onOptionsItemSelected(item);
     }
@@ -175,6 +186,21 @@ public class MainActivity extends AppCompatActivity {
         Log.i("FIREBASEfetch", "Data is"+ firebase_UserPhotourl + firebase_userDisplayName + firebase_userEmail );
 
         return true;
+    }
+
+
+    //A function for sign out from firebase
+    public void signOut(){
+        try {
+            FirebaseAuth.getInstance().signOut();
+            Log.i("Sign Out: ", "SUCCESS");
+            Intent i = new Intent(this, LoginActivity.class);
+            startActivity(i);
+        } catch (Exception e) {
+            //Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+
     }
 
 

@@ -3,20 +3,28 @@ It is regarding supply chain management for the post harvest losses of crop prod
 
 [Contributing Guidlines](CONTRIBUTING.md)
 
-![Logo By Anurag One of the contributor](logo/agro.png)
-
-Logo By Anurag One of the contributor
+   
+   <p align="center">
+    <img src="assets/agro.png" alt="logo" width="100"/> <br>
+    Logo By Anurag One of the contributor
+    </p>
 
 # For Contributing to Android Project
 
 1. Clone the Repository
 2. From android studio select Open Project -> (Path To) AgroCartt App
-3. It will automatically compile and run
+3. It will automatically compile and run.
 
 [Android App Details and ChangeLogs](AgroCarttApp/CHANGELOG.md)
 
 **Note(To the developers working on Android Project)**:- _It is requested that all the changes made should be logged in the [CHANGELOG.md](AgroCarttApp/CHANGELOG.md), this helps fellow developers to know the state of the project. If possible provide comments in the code especially when importing an external library or defining a method that the developer thinks is difficult to understand. 
 Regards, **The AgroCartt Team**_
+
+Current State of the app:-
+
+ <p align="center">
+    <img src="assets/sample.gif" alt="app"/> <br>
+    </p>
 
 * For initiating a bug report please read [Bug Report Template](https://github.com/PaytmBuildForIndia/Agrocartt/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)
 * For initiating a Feature Request Please read [Feature Request Template](https://github.com/PaytmBuildForIndia/Agrocartt/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)

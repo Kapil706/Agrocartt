@@ -7,32 +7,40 @@
     tools:context="in.agrocartt.agrocartt.LoginActivity"
     android:orientation="vertical"
     >
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        >
+        android:background="@drawable/background1">
 
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/group2" />
 
         <Button
             android:id="@+id/sendCodeButton"
-            android:layout_width="230dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/phoneNumber"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/otpET"
             android:backgroundTint="@color/icons"
             android:drawableLeft="@drawable/ic_callotp"
-            android:text="GET OTP"
-            />
+            android:text="GET OTP" />
 
         <Button
             android:id="@+id/signInBTN"
             android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_height="68dp"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="207dp"
+            android:layout_marginBottom="72dp"
+            android:background="@drawable/phone"
             android:backgroundTint="@color/icons"
             android:drawableLeft="@drawable/ic_callotp"
             android:text="SIGN IN" />
@@ -43,28 +51,30 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="200dp"
             android:ems="10"
-            android:hint="Enter Phone Number"
+            android:hint="Enter Phone Number (+91)"
             android:inputType="phone"
             android:textAlignment="center" />
 
         <EditText
             android:id="@+id/otpET"
-            android:layout_width="match_parent"
+            android:layout_width="258dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/phoneNumber"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="243dp"
+            android:ems="10"
             android:hint="OTP"
             android:inputType="numberPassword"
-            android:textAlignment="center"
-            android:ems="10"/>
+            android:textAlignment="center" />
 
         <ProgressBar
+            android:id="@+id/otp_progress"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_centerInParent="true"
-            android:visibility="gone"
-            android:id="@+id/otp_progress"/>
+            android:visibility="gone" />
     </RelativeLayout>
 
 </LinearLayout>

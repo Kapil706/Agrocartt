@@ -10,39 +10,55 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/background1"
         >
 
         <TextView
-            android:layout_height="2dp"
             android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
             android:layout_gravity="fill_vertical"
-            android:background="#000"
+            android:background="#000" />
 
-            android:layout_marginTop="350dp"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/group2" />
 
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="209dp"
+            android:background="@drawable/title" />
 
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="173dp"
+            android:layout_height="63dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="104dp" />
+            android:layout_marginBottom="130dp"
+            />
 
         <Button
             android:id="@+id/phoneVerify"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/phoneNumber"
+            android:layout_width="208dp"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="48dp"
+            android:layout_marginBottom="29dp"
+            android:background="@drawable/phone"
             android:backgroundTint="@color/icons"
             android:drawableLeft="@drawable/ic_callotp"
-            android:text="@string/sign_in_with_phone_number_and_otp"
             android:onClick="toPhoneVerifyScreen"
-            />
+            android:text="@string/sign_in_with_phone_number_and_otp" />
 
         <ProgressBar
             android:layout_width="60dp"
