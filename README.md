@@ -3,9 +3,11 @@ It is regarding supply chain management for the post harvest losses of crop prod
 
 [Contributing Guidlines](CONTRIBUTING.md)
 
-![Logo By Anurag One of the contributor](assets/agro.png)
-
-Logo By Anurag One of the contributor
+   
+   <p align="center">
+    <img src="assets/agro.png" alt="logo" width="100"/> <br>
+    Logo By Anurag One of the contributor
+    </p>
 
 # For Contributing to Android Project
 
@@ -20,4 +22,6 @@ Regards, **The AgroCartt Team**_
 
 Current State of the app:-
 
-![Video](assets/sample.gif)
+ <p align="center">
+    <img src="assets/sample.gif" alt="app"/> <br>
+    </p>
