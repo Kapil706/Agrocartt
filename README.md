@@ -3,7 +3,7 @@ It is regarding supply chain management for the post harvest losses of crop prod
 
 [Contributing Guidlines](CONTRIBUTING.md)
 
-![Logo By Anurag One of the contributor](logo/agro.png)
+![Logo By Anurag One of the contributor](assets/agro.png)
 
 Logo By Anurag One of the contributor
 

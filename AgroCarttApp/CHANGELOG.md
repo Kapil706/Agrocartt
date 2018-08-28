@@ -100,6 +100,15 @@ Added Firebase Phone/OTP verification using the [Documentation Here](https://fir
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
+### LOG 9. Improved UI and added Sign Out Button on Drawer                                                                                                   11:00 PM (28/08/18) (Contributing Member:- Sankalp Chauhan)
+Change Description:-
+* Used Adobe XD to create professional look for Sign In Screen 
+* Sign Out feature on Drawer Menu
+* Performance Improvements.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
        
 [Video]
 

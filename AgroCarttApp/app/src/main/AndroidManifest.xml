@@ -43,7 +43,8 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".PhoneVerifyActivity"></activity>
+        <activity android:name=".PhoneVerifyActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
