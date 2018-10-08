@@ -10,34 +10,65 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/background1"
         >
 
-        <Button
-            android:id="@+id/facebook_signIn"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:text="Sign in with Facebook"
-            android:textColor="@color/icons"
-            android:backgroundTint="#3b5998"
-            android:layout_centerInParent="true"
-            android:drawableLeft="@drawable/facebook_branding"
-            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="fill_vertical"
+            android:background="#000" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/group2" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="209dp"
+            android:background="@drawable/title" />
+
+
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/facebook_signIn"
-            android:layout_centerInParent="true"/>
-        <Button
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:text="Sign in with Phone Number and OTP"
-            android:backgroundTint="@color/icons"
-            android:layout_centerInParent="true"
-            android:drawableLeft="@drawable/ic_callotp"
-            android:layout_below="@id/facebook_signIn"
+            android:layout_width="173dp"
+            android:layout_height="63dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="130dp"
             />
+
+        <Button
+            android:id="@+id/phoneVerify"
+            android:layout_width="208dp"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="29dp"
+            android:background="@drawable/phone"
+            android:backgroundTint="@color/icons"
+            android:drawableLeft="@drawable/ic_callotp"
+            android:onClick="toPhoneVerifyScreen"
+            android:text="@string/sign_in_with_phone_number_and_otp" />
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/login_progress"/>
+
+
+
 
     </RelativeLayout>
 
