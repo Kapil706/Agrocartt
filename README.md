@@ -1,4 +1,10 @@
 # Agrocartt
+![Android](https://img.shields.io/badge/platform-Android-green.svg)
+![Build](https://img.shields.io/badge/build-passing-green.svg)
+![Dependencies](https://img.shields.io/hackage-deps/v/lens.svg)
+![Version](https://img.shields.io/badge/agrocartt-v1.0.0--pre--alpha-orange.svg)
+![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
+
 It is regarding supply chain management for the post harvest losses of crop products in India. We are creating a decentralized blockchain powered hyperledger project for solving this issue. We are open to suggestions and ideas that can help us so that we can grow as emerging tech company and we are creating a new digital era for farmers. This repository is under Paytm build for India Initiative. We want to create decentralized application for Farmers and customers. It is a Pan India Project. Developers who have experience in Blockchain,Solidity Programming and Mobile devlelopment are most welcome. Last but not least, those who have knowledge about agriculture and business are also inivited to join.
 
 [Contributing Guidlines](CONTRIBUTING.md)
